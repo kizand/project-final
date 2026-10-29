@@ -9,7 +9,7 @@ app:
 
 spring:
   config:
-    import: "file:application-secrets.yml"
+    import: "optional:file:application-secrets.yml"
   init:
     mode: never
   jpa:
@@ -28,7 +28,7 @@ spring:
         # https://stackoverflow.com/questions/21257819/what-is-the-difference-between-hibernate-jdbc-fetch-size-and-hibernate-jdbc-batc
         jdbc.batch_size: 20
   datasource:
-    url: jdbc:postgresql://localhost:5432/jira
+    url: jdbc:postgresql://host.docker.internal:5432/jira
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
 
